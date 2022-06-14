@@ -1,17 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  
+  <CardHeader />
+  <PokemonCard />
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PokemonCard from './components/PokemonCard.vue'
+import CardHeader from './components/CardHeader.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    PokemonCard,
+    CardHeader
   }
+
 }
+
 </script>
 
 <style>
@@ -22,5 +28,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+body{
+  background-color: rgb(73, 114, 190);
 }
 </style>
