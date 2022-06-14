@@ -1,4 +1,4 @@
-# app
+# Pokemon app - Vue js
 
 
 ![2022-06-15 (3)](https://user-images.githubusercontent.com/50320663/173706310-85e4e8a0-e1e9-41e0-b634-d04866d2bf32.png)
