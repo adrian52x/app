@@ -1,5 +1,15 @@
 <template>
     
+<h1>Pokemon App</h1>
+<h2>Selected pokemon: <i>{{firstLetterUpperCase(pokemon)}}</i></h2> 
+<div class="header">
+
+<PokemonImage @updateSelected="updatePokeomonData" imgPath="images/Ditto.png" pokemonName="ditto"/>
+<PokemonImage @updateSelected="updatePokeomonData" imgPath="images/Pikachu.jpg" pokemonName="pikachu"/>
+<PokemonImage @updateSelected="updatePokeomonData" imgPath="images/charmander.jpg" pokemonName="charmander"/>
+
+</div> 
+
     <div class="container">
        
         <div>
@@ -28,12 +38,12 @@
 
 <script>
 
-
+import PokemonImage from './PokemonImage.vue'
 
 export default {
     name: 'PokemonCard',
     components: {
-       
+       PokemonImage
         
     }, 
     data: () =>({
@@ -44,25 +54,45 @@ export default {
     }),
 
     async mounted(){
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.pokemon}`)
-        const data = await response.json();
-    
+        this.updatePokeomonData();
         
-        this.abilities = data.abilities;
-        this.stats =  data.stats;
-        this.moves =  data.moves;
-
-
-        console.log(data.species.name);
-        console.log(data);
     },
     methods: {
         firstLetterUpperCase: function (text){
             return text.charAt(0).toUpperCase() + text.slice(1)
         },
+        
+        async fetchData(pokemon){
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+                const data = await response.json();
+            
+                
+                this.abilities = data.abilities;
+                this.stats =  data.stats;
+                this.moves =  data.moves;
 
-        updatePokeomon(variable) {
-        this.pokemon = variable
+                console.log(data.species.name);
+                console.log(data);
+        },
+
+        async updatePokeomonData(newPokemon) {
+
+            //Default
+            if(newPokemon == undefined){
+                
+                //this.pokemon = 'pikachu';
+                this.fetchData(this.pokemon);
+
+
+            }else{
+
+                this.pokemon = newPokemon;
+                this.fetchData(this.pokemon);
+     
+            }
+
+
+           
         }
     }
 
@@ -74,6 +104,13 @@ export default {
 
 
 <style scoped>
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+ 
+}
 .container{
     text-align: left;
     margin-top: 20px;

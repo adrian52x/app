@@ -1,19 +1,16 @@
 <template>
   
-  <CardHeader />
   <PokemonCard />
 
 </template>
 
 <script>
 import PokemonCard from './components/PokemonCard.vue'
-import CardHeader from './components/CardHeader.vue'
 
 export default {
   name: 'App',
   components: {
     PokemonCard,
-    CardHeader
   }
 
 }
