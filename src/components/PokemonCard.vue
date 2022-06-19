@@ -1,12 +1,19 @@
 <template>
     
 <h1>Pokemon App</h1>
-<h2>Selected pokemon: <i>{{firstLetterUpperCase(pokemon)}}</i></h2> 
+
+
+<div class="search-container">
+      <input type="text" v-model="input" placeholder="Search.." name="search">
+      <button type="submit">Submit</button>
+</div>
+
+<hr>
 <div class="header">
 
-<PokemonImage @updateSelected="updatePokeomonData" imgPath="images/Ditto.png" pokemonName="ditto"/>
-<PokemonImage @updateSelected="updatePokeomonData" imgPath="images/Pikachu.jpg" pokemonName="pikachu"/>
-<PokemonImage @updateSelected="updatePokeomonData" imgPath="images/charmander.jpg" pokemonName="charmander"/>
+    <PokemonImage @updateSelected="updatePokeomonData" imgPath="images/Ditto.png" pokemonName="ditto"/>
+    <PokemonImage @updateSelected="updatePokeomonData" imgPath="images/Pikachu.jpg" pokemonName="pikachu"/>
+    <PokemonImage @updateSelected="updatePokeomonData" imgPath="images/charmander.jpg" pokemonName="charmander"/>
 
 </div> 
 
