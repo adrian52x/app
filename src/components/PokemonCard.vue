@@ -80,7 +80,6 @@ export default {
             //Default
             if(newPokemon == undefined){
                 
-                //this.pokemon = 'pikachu';
                 this.fetchData(this.pokemon);
 
 
