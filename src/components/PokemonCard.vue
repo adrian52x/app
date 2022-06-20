@@ -48,7 +48,7 @@
 <script>
 
 import PokemonImage from './PokemonImage.vue'
-
+ 
 
 export default {
     name: 'PokemonCard',
@@ -73,7 +73,9 @@ export default {
             return text.charAt(0).toUpperCase() + text.slice(1)
         },
         isDisabled(input) {
+            
             return input.length === 0;
+
         },
         
         async fetchData(pokemon){
@@ -90,11 +92,12 @@ export default {
                     
                 this.$toast.success(`Hey! we found: `+ pokemon);
 
-
+                
 
                 console.log(data);
 
             } catch (error) {
+                
                 this.$toast.error(`Hey! no pokemon found: `+ pokemon);
                 console.log(error);
             }
