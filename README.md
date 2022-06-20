@@ -1,6 +1,6 @@
 # Pokemon app - Vue js
 
-#Branches
+#Branches <br>
 <a href="https://github.com/adrian52x/app/tree/appV2">appV2 - Refactoring</a> 
 <a href="https://github.com/adrian52x/app/tree/appV3">appV3 - Added Search Bar</a>
 
