@@ -1,6 +1,6 @@
 <template>
   <div class="circle">
-    <img v-bind:alt="pokemonName" v-bind:src="imgPath" v-on:click="selectPokemon(pokemonName)">
+    <img v-bind:src="imgPath">
   </div>
   
  
@@ -12,14 +12,10 @@
 export default {
   name: 'PokemonImage',
   props: {
-    imgPath: String,
-    pokemonName: String
+    imgPath: String
   },
   methods: {
-    selectPokemon: function(value){
-      this.$emit('updateSelected', value)
-       
-    }
+    
   }
   
 }
@@ -29,14 +25,14 @@ export default {
 <style scoped>
 
 img {
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     border-radius: 80%;
     
 }
 .circle{
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     background: rgb(255, 255, 255);
     border-radius: 50%;
 }
