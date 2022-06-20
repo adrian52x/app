@@ -1,4 +1,5 @@
-# app
+# appV3
+Added Search Bar + notifications
 
 ## Project setup
 ```
